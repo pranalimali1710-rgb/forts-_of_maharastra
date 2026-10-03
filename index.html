@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forts of Maharashtra</title>
+    <style>
+
+        /* =========================
+           BASIC STYLE
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f0e6;
+            color: #333;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            background-color: #20382a;
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e5b85c;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #e5b85c;
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        .home {
+            min-height: 560px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.55)
+                ),
+                url("images/raigad.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .home-content h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .home-content p {
+            font-size: 21px;
+            margin-bottom: 25px;
+        }
+
+        .home-button {
+            display: inline-block;
+
+            background-color: #b87928;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 28px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+        }
+
+        .home-button:hover {
+            background-color: #8f5c1d;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #243d2c;
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .introduction {
+            background-color: white;
+            text-align: center;
+        }
+
+        .intro-content {
+            max-width: 1000px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           FORT SECTION
+        ========================= */
+
+        #forts {
+            background-color: #f5f0e6;
+        }
+
+        .fort {
+            background-color: white;
+
+            max-width: 1100px;
+
+            margin: 0 auto 45px;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+        }
+
+        .fort-title {
+            background-color: #263e2d;
+
+            color: white;
+
+            padding: 20px 25px;
+        }
+
+        .fort-title h2 {
+            font-size: 28px;
+        }
+
+        .fort-content {
+            padding: 28px;
+        }
+
+        .fort-image {
+            width: 100%;
+            height: 430px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .fort-info {
+            margin-bottom: 18px;
+        }
+
+        .fort-info b {
+            color: #73451f;
+        }
+
+        .fort-content ul {
+            margin-left: 25px;
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           TYPES OF FORTS
+        ========================= */
+
+        .types {
+            background-color: #263e2d;
+            color: white;
+        }
+
+        .types .section-title h2 {
+            color: #e5b85c;
+        }
+
+        .types .section-title p {
+            color: white;
+        }
+
+        .type-container {
+            display: grid;
+
+            grid-template-columns:
+            repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .type-box {
+            background-color: #35513e;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 15px;
+        }
+
+        .type-box h3 {
+            color: #e5b85c;
+
+            font-size: 23px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           IMPORTANCE
+        ========================= */
+
+        .importance {
+            background-color: white;
+        }
+
+        .importance-box {
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+        .importance-box ul {
+            margin-left: 25px;
+        }
+
+        .importance-box li {
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #16251b;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer span {
+            color: #e5b85c;
+        }
+
+
+        /* =========================
+           TOP BUTTON
+        ========================= */
+
+        .top-button {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 45px;
+            height: 45px;
+
+            background-color: #b87928;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media(max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .home-content h1 {
+                font-size: 40px;
+            }
+
+            .type-container {
+                grid-template-columns: 1fr;
+            }
+
+            .fort-image {
+                height: 300px;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .home-content h1 {
+                font-size: 32px;
+            }
+
+            .home-content p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .fort-title h2 {
+                font-size: 22px;
+            }
+
+            .fort-content {
+                padding: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            🏰 Forts of Maharashtra
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#history">History</a>
+            </li>
+
+            <li>
+                <a href="#forts">Forts</a>
+            </li>
+
+          </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <header class="home" id="home">
+
+        <div class="home-content">
+
+            <h1>
+                Forts of Maharashtra
+            </h1>
+
+            <p>
+                A Journey Through the Glorious History
+                and Legacy of Maratha Empire
+            </p>
+
+            <a href="#forts" class="home-button">
+                Explore Forts
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HISTORY / INTRODUCTION
+    ========================= -->
+
+    <section class="introduction" id="history">
+
+        <div class="section-title">
+
+            <h2>
+                The Strategic Evolution of Deccan Fortifications
+            </h2>
+
+            <p>
+                History and heritage of Maharashtra
+            </p>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <p>
+                Chhatrapati Shivaji Maharaj built over 350 forts
+                in Maharashtra, classified into Giri-durg
+                (hill-forts), Jala-durg (sea-forts), and
+                Bhuikot (land-forts).
+            </p>
+
+            <br>
+
+            <p>
+                These structures served as military bases,
+                administrative centres and strategic hubs,
+                making them the backbone of the Maratha Empire.
+            </p>
+
+            <br>
+
+            <p>
+                The forts of Maharashtra represent the courage,
+                planning, architecture and military strategy
+                of the Maratha period.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FORTS
+    ========================= -->
+
+    <section id="forts">
+
+        <div class="section-title">
+
+            <h2>
+                Famous Forts of Maharashtra
+            </h2>
+
+            <p>
+                Geographical, historical and architectural information
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================
+             RAIGAD FORT
+        ===================== -->
+
+        <article class="fort">
+
+            <div class="fort-title">
+
+                <h2>
+                    1. Raigad Fort –
+                    The Sovereign Capital of Swarajya
+                </h2>
+
+            </div>
+
+
+            <div class="fort-content">
+
+                <img
+                    src="C:\Users\praja\OneDrive\Attachments\Desktop\Forts_Of_Maharashtra\Images\Raigad_Fort.jpg"
+                    alt="Raigad Fort"
+                    title="Raigad Fort"
+                    style="cursor:pointer"
+                    class="fort-image"
+                >
+
+
+                <p class="fort-info">
+
+                    <b>Geographical Context:</b>
+
+                    Located in the Raigad district,
+                    this massive hill fortress stands at
+                    an elevation of 820 meters (2,700 feet)
+                    above its base within the Sahyadri
+                    mountain range. Its steep slopes made
+                    it naturally inaccessible to hostile forces.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Detailed History:</b>
+
+                    Originally known as the fortress of Rairi,
+                    Chhatrapati Shivaji Maharaj captured it
+                    from the More family of Javli in 1656.
+                    Recognizing its strategic importance,
+                    he completely restructured the site into
+                    the capital of the expanding Maratha Empire.
+
+                    It was here, on June 6, 1674, that
+                    Chhatrapati Shivaji Maharaj was formally
+                    crowned, establishing the sovereign state
+                    of Hindavi Swarajya.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Architectural Layout:</b>
+
+                    The fort is accessed via the imposing
+                    Maha Darwaja, which is flanked by massive
+                    defensive bastions.
+
+                    The internal plateau houses the
+                    Hirakani Bastion, the Raigad royal court,
+                    the Jagadishwar Temple and a sprawling
+                    market street designed to handle
+                    large-scale trade and business directly
+                    from horseback.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================
+             RAJGAD FORT
+        ===================== -->
+
+        <article class="fort">
+
+            <div class="fort-title">
+
+                <h2>
+                    2. Rajgad Fort –
+                    The Foundation of Empire Building
+                </h2>
+
+            </div>
+
+
+            <div class="fort-content">
+
+                <img
+                    src="C:\Users\praja\OneDrive\Attachments\Desktop\Forts_Of_Maharashtra\Images\Rajgad_Fort.jpg"
+                    alt="Rajgad Fort"
+                    title="Rajgad Fort"
+                    style="cursor:pointer"
+                    class="fort-image"
+                >
+
+
+                <p class="fort-info">
+
+                    <b>Geographical Context:</b>
+
+                    Situated roughly 48 kilometres southwest
+                    of Pune, Rajgad stands on the Murumbadev
+                    mountain, offering a commanding panoramic
+                    view of the surrounding Nira and Gunjavane
+                    river valleys.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Detailed History:</b>
+
+                    Rajgad serves as the foundational bedrock
+                    of the Maratha Empire.
+
+                    Captured by a young Shivaji Maharaj
+                    in 1647, it functioned as the primary
+                    administrative and military centre for
+                    a continuous period of 26 years.
+
+                    The fort witnessed critical historical
+                    timelines, including the birth of
+                    Chhatrapati Rajaram Maharaj and strategic
+                    planning of the empire from Agra.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Architectural Layout:</b>
+
+                    Rajgad is renowned for its advanced
+                    defensive layout, split into three
+                    fortified plateaus known as Machis:
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Padmavati Machi
+                    </li>
+
+                    <li>
+                        Sanjivani Machi
+                    </li>
+
+                    <li>
+                        Suvela Machi
+                    </li>
+
+                </ul>
+
+
+                <p class="fort-info">
+
+                    These plateaus have hidden exit paths
+                    called Chor-Darwajas for surprise
+                    counter-attacks.
+
+                    At the highest peak sits the Balekilla,
+                    the heavily fortified inner sanctuary
+                    containing water reservoirs and sacred
+                    structures.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================
+             SINDHUDURG FORT
+        ===================== -->
+
+        <article class="fort">
+
+            <div class="fort-title">
+
+                <h2>
+                    3. Sindhudurg Fort –
+                    The Sentinel of the Malvan Coast
+                </h2>
+
+            </div>
+
+
+            <div class="fort-content">
+
+                <img
+                    src="C:\Users\praja\OneDrive\Attachments\Desktop\Forts_Of_Maharashtra\Images\Sindhu-durg_Fort.jpg"
+                    alt="Sindhudurg Fort"
+                    title="Sindhudurg Fort"
+                    style="cursor:pointer"
+                    class="fort-image"
+                >
+
+
+                <p class="fort-info">
+
+                    <b>Geographical Context:</b>
+
+                    Unlike mainland fortresses,
+                    Sindhudurg is a marine fort constructed
+                    entirely on Kurte Island, a rocky islet
+                    in the Arabian Sea right off the coast
+                    of Malvan in the Konkan region.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Detailed History:</b>
+
+                    Construction began in November 1664
+                    under the direct supervision of
+                    Shivaji Maharaj.
+
+                    The objective was to neutralize the
+                    maritime dominance of foreign trading
+                    powers, including the English and Dutch,
+                    and to curb the naval raids of the
+                    Siddis of Janjira.
+
+                    Over three years, thousands of stonemasons
+                    completed a fortress that successfully
+                    anchored the Maratha maritime defence.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Architectural Layout:</b>
+
+                    The fort's foundational engineering
+                    is a historic marvel.
+
+                    Builders melted down and poured massive
+                    mounds of lead and iron directly into the
+                    sea bedrock to anchor the structure.
+
+                    The perimeter features a 4-kilometre-long
+                    zigzag wall reaching heights of up to
+                    30 feet, specifically designed to deflect
+                    naval cannon fire.
+
+                    The entrance is masterfully hidden.
+
+                    Inside the complex lie freshwater wells
+                    that remain active year-round despite
+                    being surrounded by seawater.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================
+             PRATAPGAD FORT
+        ===================== -->
+
+        <article class="fort">
+
+            <div class="fort-title">
+
+                <h2>
+                    4. Pratapgad Fort –
+                    The Fortress of Valor
+                </h2>
+
+            </div>
+
+
+            <div class="fort-content">
+
+                <img
+                    src="C:\Users\praja\OneDrive\Attachments\Desktop\Forts_Of_Maharashtra\Images\Pratapgad_Fort.jpg"
+                    alt="Pratapgad Fort"
+                    title="Pratapgad Fort"
+                    style="cursor:pointer"
+                    class="fort-image"
+                >
+
+
+                <p class="fort-info">
+
+                    <b>Geographical Context:</b>
+
+                    Built in the Satara district near
+                    the popular hill station of Mahabaleshwar,
+                    Pratapgad stands at an altitude of
+                    approximately 1,080 metres.
+
+                    It sits on a strategic mountain crest
+                    dividing the surrounding region from
+                    the inland Deccan plateau.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Detailed History:</b>
+
+                    Commissioned by Chhatrapati Shivaji Maharaj
+                    to command the rebellious Javli valley,
+                    the fort was completed by his prime minister
+                    Moropant Pingale in 1656.
+
+                    The fort is famous for the Battle of
+                    Pratapgad, fought on November 10, 1659,
+                    where Shivaji Maharaj defeated the
+                    Adilshahi commander Afzal Khan.
+
+                    This victory established the Marathas
+                    as a formidable military power in the region.
+
+                </p>
+
+
+                <p class="fort-info">
+
+                    <b>Architectural Layout:</b>
+
+                    Pratapgad is structurally split into:
+
+                </p>
+
+
+                <ul>
+
+               
